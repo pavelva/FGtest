@@ -15,11 +15,11 @@ namespace FGtest
         static void Main(string[] args)
         {
             Thread server = new Thread(startServer);
-            Thread client = new Thread(startClient);
+            //Thread client = new Thread(startClient);
 
             server.Start();
-            Thread.Sleep(1000);
-            client.Start();
+            //Thread.Sleep(1000);
+            //client.Start();
         }
 
         public static void startServer()
