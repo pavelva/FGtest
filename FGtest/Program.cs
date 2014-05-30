@@ -15,7 +15,7 @@ namespace FGtest
         static void Main(string[] args)
         {
             Thread server = new Thread(startServer);
-            //Thread client = new Thread(startClient);
+            Thread client = new Thread(startClient);
 
             server.Start();
             //Thread.Sleep(1000);
@@ -24,7 +24,7 @@ namespace FGtest
 
         public static void startServer()
         {
-            TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"),5000);
+            TcpListener server = new TcpListener(IPAddress.Parse("50.16.202.219"), 5000);
 
             server.Start();
             Console.WriteLine("start client");
@@ -53,7 +53,7 @@ namespace FGtest
 
         public static void startClient()
         {
-            string ip = "127.0.0.1";
+            string ip = "50.16.202.219";
             Console.WriteLine("start client");
             TcpClient client = new TcpClient(ip, 5000);
             Console.WriteLine("client connected");
